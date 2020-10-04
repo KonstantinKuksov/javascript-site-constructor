@@ -10,3 +10,5 @@ const model = [
     ],
   },
 ];
+
+const $site = document.querySelector('#site');
