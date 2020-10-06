@@ -12,10 +12,6 @@ class Block {
 }
 
 export class TitleBlock extends Block {
-  constructor(value, options) {
-    super(value, options);
-  }
-
   toHTML() {
     const { tag = 'h1', styles } = this.options;
     return row(col(`<${tag}>${this.value}</${tag}>`), css(styles));
@@ -23,10 +19,6 @@ export class TitleBlock extends Block {
 }
 
 export class ImageBlock extends Block {
-  constructor(value, options) {
-    super(value, options);
-  }
-
   toHTML() {
     const { styles, imageStyles: is, alt = '' } = this.options;
     return row(
@@ -37,10 +29,6 @@ export class ImageBlock extends Block {
 }
 
 export class ColumnsBlock extends Block {
-  constructor(value, options) {
-    super(value, options);
-  }
-
   toHTML() {
     const { styles } = this.options;
     const html = this.value.map(col);
@@ -49,10 +37,6 @@ export class ColumnsBlock extends Block {
 }
 
 export class TextBlock extends Block {
-  constructor(value, options) {
-    super(value, options);
-  }
-
   toHTML() {
     const { styles } = this.options;
     return row(col(`<p>${this.value}</p>`), css(styles));
